@@ -2,7 +2,7 @@ var fs = require('fs');
 var staticServer = require('http').createServer(HReqHandler);
 var wsChatServer = require('./WsChat-node');
 
-var port = 5566;
+var port = 80;
 var count = 0;
 var targetFile = "";
 
