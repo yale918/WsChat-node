@@ -1,37 +1,21 @@
 var express = require('express');
 var app = express();
-var http = require('http').Server(app);
-var port = process.env.PORT || 80
-
-
-
-var fs = require('fs');
-var staticServer = require('http').createServer(HReqHandler);
 var wsChatServer = require('./WsChat-node');
+var http = require('http').Server(app);
+app.set('port', (process.env.PORT || 5000));
 
-var count = 0;
-var targetFile = "";
+app.use(express.static(__dirname + '/public'));
 
+// views is directory for all template files
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
 
-
-function HReqHandler(request, response){
-	if(request.url != "/favicon.ico"){
-		count++;
-		//console.log("request "+count+" coming");
-		//console.log(request.method+" : "+request.url);
-	}	
-
-	if(request.url=='/')	targetFile = __dirname+"/index.html";
-	else 					targetFile = __dirname+request.url;
-	
-	fs.readFile(targetFile,function(err, data){
-		if(err) console.log(err);
-		response.end(data);
-	});
-}
-
-staticServer.listen(port, function(){
-	console.log("staticServer is listening on: "+5566+" [wsChat is on...]");
+app.get('/', function(request, response) {
+  response.render('pages/index');
 });
 
-wsChatServer.listen(staticServer);
+http.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
+});
+
+wsChatServer.listen(http);
