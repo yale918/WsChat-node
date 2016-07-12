@@ -2,7 +2,9 @@
     "name":"wschat",
     "version":"0.0.1",
     "description":"second socket.io app",
-    "main":"WsServer-node.js",
+    "scripts":{
+    	"start":"node wsserver-node.js"
+    },
     "engines":{
     	"node": "v4.4.1"
     },

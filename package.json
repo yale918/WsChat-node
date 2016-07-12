@@ -3,7 +3,7 @@
     "version":"0.0.1",
     "description":"second socket.io app",
     "scripts":{
-    	"start":"node wsserver-node.js"
+    	"start":"node WsServer-node.js"
     },
     "engines":{
     	"node": "v4.4.1"
