@@ -5,7 +5,6 @@ var port = process.env.PORT || 80
 
 
 
-var cool = require('cool-ascii-faces');
 var fs = require('fs');
 var staticServer = require('http').createServer(HReqHandler);
 var wsChatServer = require('./WsChat-node');
