@@ -1,9 +1,15 @@
+var express = require('express');
+var app = express();
+var http = require('http').Server(app);
+var port = process.env.PORT || 5566
+
+
+
 var cool = require('cool-ascii-faces');
 var fs = require('fs');
 var staticServer = require('http').createServer(HReqHandler);
 var wsChatServer = require('./WsChat-node');
 
-var port = 80;
 var count = 0;
 var targetFile = "";
 
