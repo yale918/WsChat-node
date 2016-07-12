@@ -1,0 +1,8 @@
+{
+    "name":"wschat",
+    "version":"0.0.1",
+    "description":"second socket.io app",
+    "dependencies":{
+        "socket.io": "^1.1.0"
+    }
+}
