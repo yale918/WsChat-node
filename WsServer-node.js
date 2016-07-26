@@ -1,5 +1,5 @@
 var http = require('http');
-var port = process.env.PORT || 5566;
+var port = process.env.PORT || 8082;
 
 
 
@@ -29,7 +29,7 @@ function HReqHandler(request, response){
 }
 
 staticServer.listen(port, function(){
-	console.log("staticServer is listening on: "+5566+" [wsChat is on...]");
+	console.log("staticServer is listening on: "+8082+" [wsChat is on...]");
 });
 
 wsChatServer.listen(staticServer);

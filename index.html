@@ -19,7 +19,7 @@
 <script>
 	var myName;
 	var pdata;
-	var socket = io('http://localhost:5566');
+	var socket = io();
 	
 	socket.on('toClient', function(data){
 		pdata = data;
